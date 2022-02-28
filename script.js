@@ -21,10 +21,21 @@ const displayPhones = phones => {
         <div class="card-body mx-auto">
             <h5 class="card-title fw-bold">${phone.phone_name}</h5>
             <h6 class="card-title fw-bold">Brand: ${phone.brand}</h6>
-            <button onclick="loadPhoneDetails()" class="btn btn-success mt-3">Explore</button>
+            <h6 class="card-title fw-bold">Brand: ${phone.brand}</h6>
+            <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-success mt-3">Explore</button>
         </div>
     </div>
         `
         phonesContainer.appendChild(div);
     })
 }
+
+// load single phone details 
+const loadPhoneDetails = slugs => {
+    const url = `https://openapi.programming-hero.com/api/phone/${slugs}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayPhoneDetails(data))
+}
+
+//display single phone details in UI
