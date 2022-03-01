@@ -1,7 +1,12 @@
 // load phones data 
 const loadPhones = () => {
     const searchInput = document.getElementById('search-input');
-    const searchValue = searchInput.value;
+    let searchValue = searchInput.value;
+    const errorDiv = document.getElementById('error-text');
+    if (searchValue = '') {
+        errorDiv.innerText = 'Write something please!';
+    }
+    //searchInput.value = '';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
     fetch(url)
         .then(res => res.json())
@@ -10,12 +15,13 @@ const loadPhones = () => {
 
 //show phones in UI
 const displayPhones = phones => {
-    //console.log(phones);
+    const phone20 = phones.slice(0, 20)
+    console.log(phone20);
     const phonesContainer = document.getElementById('phone-holder');
     phonesContainer.textContent = '';
     const detailsContainer = document.getElementById('show-details');
     detailsContainer.textContent = '';
-    phones.forEach(phone => {
+    phone20.forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -66,15 +72,16 @@ const displayPhoneDetails = slugs => {
      <h5 class="fw-bold">Sensors:</h5>
      <p>${slugs.mainFeatures.sensors}</p>
      <h5 class="fw-bold">Others:</h5>
-     <ul>
+    <div>
+     <ul class="text-left">
      <li>WLAN:${slugs.others.WLAN ? slugs.others.WLAN : 'Not found'}</li>
      <li>Bluetooth:${slugs.others.Bluetooth ? slugs.others.Bluetooth : 'Not found'}</li>
      <li>GPS:${slugs.others.GPS ? slugs.others.GPS : 'Not found'}</li>
      <li>NFC:${slugs.others.NFC ? slugs.others.NFC : 'Not found'}</li>
      <li>Radio:${slugs.others.Radio ? slugs.others.Radio : 'Not found'}</li>
      <li>USB:${slugs.others.USB ? slugs.others.USB : 'Not found'}</li>
-
      </ul>
+    </div>
     
     </div>
      `;
