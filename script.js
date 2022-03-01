@@ -13,6 +13,8 @@ const displayPhones = phones => {
     //console.log(phones);
     const phonesContainer = document.getElementById('phone-holder');
     phonesContainer.textContent = '';
+    const detailsContainer = document.getElementById('show-details');
+    detailsContainer.textContent = '';
     phones.forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -45,18 +47,23 @@ const loadPhoneDetails = slugs => {
 const displayPhoneDetails = slugs => {
     console.log(slugs)
     const detailsContainer = document.getElementById('show-details');
+    detailsContainer.textContent = '';
     const div = document.createElement('div');
     const releaseDateFromData = ` ${slugs.releaseDate}`;
     div.innerHTML = `
      <img src="${slugs.image}" class="card-img-top w-25" alt="...">
      <div class="card-body">
-     <h5 class="card-title fw-bold">Phone Name: ${slugs.name}</h5>
-         <h6 class="card-title fw-bold text-muted">Release Date: ${slugs.releaseDate ? slugs.releaseDate : 'Not found'}</h6>
-         
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-             content.</p>
-         
-     </div>
+     <h5 class="card-title fs-3 fw-bold">Phone Name: ${slugs.name}</h5>
+         <h6 class="card-title fw-bold text-muted fs-5">Release Date: ${slugs.releaseDate ? slugs.releaseDate : 'Not found'}</h6>
+
+      <ul class="">
+          <li>Storage: ${slugs.mainFeatures.storage ? slugs.mainFeatures.storage : 'Not found'}</li>
+          <li>Display Size: ${slugs.mainFeatures.displaySize ? slugs.mainFeatures.displaySize : 'Not found'}</li>
+          <li>Chipset: ${slugs.mainFeatures.chipSet ? slugs.mainFeatures.chipSet : 'Not found'}</li>
+          <li>Memory: ${slugs.mainFeatures.memory ? slugs.mainFeatures.memory : 'Not found'}</li>
+          <li>Storage: ${slugs.mainFeatures.storage ? slugs.mainFeatures.storage : 'Not found'}</li>
+     </ul>
+    </div>
      `;
     detailsContainer.appendChild(div);
 
