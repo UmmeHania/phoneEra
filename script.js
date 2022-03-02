@@ -87,7 +87,7 @@ const displayPhoneDetails = slugs => {
      </div>
      </div>
      <h5 class="fw-bold">Sensors:</h5>
-     <p>${slugs.mainFeatures.sensors}</p>
+     <p>${slugs.mainFeatures.sensors.join(' , ')}</p>
      <h5 class="fw-bold">Others:</h5>
        <div>${slugs.others ? `<ul class="text-left">
        <li><span class="fw-bold">WLAN</span>:${slugs.others.WLAN ? slugs.others.WLAN : 'Not found'}</li>
