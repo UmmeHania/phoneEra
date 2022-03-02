@@ -78,11 +78,11 @@ const displayPhoneDetails = slugs => {
     <div class="text-left">
        <h5 class="fw-bold">Features:</h5>
        <div class="">${slugs.mainFeatures ? `<ul class="">
-       <li>Storage: ${slugs.mainFeatures.storage ? slugs.mainFeatures.storage : 'Not found'}</li>
-       <li>Display Size: ${slugs.mainFeatures.displaySize ? slugs.mainFeatures.displaySize : 'Not found'}</li>
-       <li>Chipset: ${slugs.mainFeatures.chipSet ? slugs.mainFeatures.chipSet : 'Not found'}</li>
-       <li>Memory: ${slugs.mainFeatures.memory ? slugs.mainFeatures.memory : 'Not found'}</li>
-       <li>Storage: ${slugs.mainFeatures.storage ? slugs.mainFeatures.storage : 'Not found'}</li>
+       <li><span class="fw-bold">Storage</span>: ${slugs.mainFeatures.storage ? slugs.mainFeatures.storage : 'Not found'}</li>
+       <li><span class="fw-bold"> Display Size</span>: ${slugs.mainFeatures.displaySize ? slugs.mainFeatures.displaySize : 'Not found'}</li>
+       <li><span class="fw-bold">Chipset</span>: ${slugs.mainFeatures.chipSet ? slugs.mainFeatures.chipSet : 'Not found'}</li>
+       <li><span class="fw-bold">Memory</span>: ${slugs.mainFeatures.memory ? slugs.mainFeatures.memory : 'Not found'}</li>
+       <li><span class="fw-bold">Storage</span>: ${slugs.mainFeatures.storage ? slugs.mainFeatures.storage : 'Not found'}</li>
        </ul>` : "not found"}
      </div>
      </div>
@@ -90,12 +90,12 @@ const displayPhoneDetails = slugs => {
      <p>${slugs.mainFeatures.sensors}</p>
      <h5 class="fw-bold">Others:</h5>
        <div>${slugs.others ? `<ul class="text-left">
-       <li class="">WLAN:${slugs.others.WLAN ? slugs.others.WLAN : 'Not found'}</li>
-       <li>Bluetooth:${slugs.others.Bluetooth ? slugs.others.Bluetooth : 'Not found'}</li>
-       <li>GPS:${slugs.others.GPS ? slugs.others.GPS : 'Not found'}</li>
-       <li>NFC:${slugs.others.NFC ? slugs.others.NFC : 'Not found'}</li>
-       <li>Radio:${slugs.others.Radio ? slugs.others.Radio : 'Not found'}</li>
-      <li>USB:${slugs.others.USB ? slugs.others.USB : 'Not found'}</li>
+       <li><span class="fw-bold">WLAN</span>:${slugs.others.WLAN ? slugs.others.WLAN : 'Not found'}</li>
+       <li><span class="fw-bold">Bluetooth</span>:${slugs.others.Bluetooth ? slugs.others.Bluetooth : 'Not found'}</li>
+       <li><span class="fw-bold">GPS</span>:${slugs.others.GPS ? slugs.others.GPS : 'Not found'}</li>
+       <li><span class="fw-bold">NFC</span>:${slugs.others.NFC ? slugs.others.NFC : 'Not found'}</li>
+       <li><span class="fw-bold">Radio</span>:${slugs.others.Radio ? slugs.others.Radio : 'Not found'}</li>
+      <li><span class="fw-bold">USB</span>:${slugs.others.USB ? slugs.others.USB : 'Not found'}</li>
       </ul>` : "not found"}
      </div>
     </div> `;
